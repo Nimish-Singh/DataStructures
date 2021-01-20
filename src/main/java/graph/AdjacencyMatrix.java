@@ -23,9 +23,9 @@ public class AdjacencyMatrix {
         matrix[u][v] = 0;
     }
 
-    public List<Integer> getAdjacentNodes(int node) {
+    public List<Integer> getAdjacentNodesUndirected(int node) {
         return IntStream.range(0, matrix[0].length)
-                .filter(x -> matrix[node][x] != 0)
+                .filter(x -> matrix[node][x] != 0 || matrix[x][node] != 0)
                 .boxed()
                 .collect(Collectors.toList());
     }
@@ -36,5 +36,9 @@ public class AdjacencyMatrix {
 
     public int getWeightOfEdgeBetween(int u, int v) {
         return matrix[u][v];
+    }
+
+    public int getNumberOfNodes() {
+        return matrix.length;
     }
 }

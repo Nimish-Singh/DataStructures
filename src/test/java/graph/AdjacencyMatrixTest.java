@@ -44,12 +44,19 @@ public class AdjacencyMatrixTest {
     }
 
     @Test
-    public void shouldReturnAdjacentNodes() {
+    public void shouldReturnAdjacentNodesForUndirectedGraph() {
         graph.addEdge(0, 1);
         graph.addEdge(0, 3);
         graph.addEdge(0, 4);
-        List<Integer> adjacentNodes = graph.getAdjacentNodes(0);
+        List<Integer> adjacentNodes = graph.getAdjacentNodesUndirected(0);
         adjacentNodes.sort(Integer::compareTo);
         assertArrayEquals(new int[]{1, 3, 4}, adjacentNodes.stream().mapToInt(x -> x).toArray());
+        adjacentNodes = graph.getAdjacentNodesUndirected(1);
+        assertArrayEquals(new int[]{0}, adjacentNodes.stream().mapToInt(x -> x).toArray());
+    }
+
+    @Test
+    public void shouldGiveNumberOfNodes() {
+        assertEquals(5, graph.getNumberOfNodes());
     }
 }
