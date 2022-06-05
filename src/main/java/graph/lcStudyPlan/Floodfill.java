@@ -1,4 +1,4 @@
-package graph;
+package graph.lcStudyPlan;
 
 import javafx.util.Pair;
 
