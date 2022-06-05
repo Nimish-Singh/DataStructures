@@ -1,6 +1,5 @@
-package graph.lcStudyPlan;
+package graph.lcStudyPlan.day1;
 
-import graph.lcStudyPlan.NumberOfIslands;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

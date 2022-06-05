@@ -1,4 +1,4 @@
-package graph.lcStudyPlan;
+package graph.lcStudyPlan.day2;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package graph.lcStudyPlan;
+package graph.lcStudyPlan.day2;
 
 // https://leetcode.com/problems/max-area-of-island/
 public class MaxAreaOfIsland {
