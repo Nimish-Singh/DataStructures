@@ -2,6 +2,7 @@ package graph;
 
 import java.util.stream.IntStream;
 
+// https://www.scaler.com/topics/data-structures/disjoint-set/
 public class DisjointSet {
     // parent[i] = parent of node i
     private int[] parent;
@@ -15,7 +16,7 @@ public class DisjointSet {
         rank = new int[numberOfNodes];
 
         IntStream.range(0, numberOfNodes).forEach(index -> parent[index] = index);
-        IntStream.range(0, numberOfNodes).forEach(index -> parent[index] = 0);
+        IntStream.range(0, numberOfNodes).forEach(index -> rank[index] = 0);
     }
 
     // returns the parent/representative of the set to which node belongs
@@ -24,7 +25,7 @@ public class DisjointSet {
             return node;
 
         // optimisation- path compression
-        parent[node] = find(node);
+        parent[node] = find(parent[node]);
         return parent[node];
     }
 
